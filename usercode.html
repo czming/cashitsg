@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+	<title> Paycard </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<style>
+	body{
+		margin: 0;
+		padding: 0;
+	}
+	#navigation-bar{
+		list-style-type: none;
+		background-color: black;
+		padding: 0;
+		margin: 0;
+		overflow:hidden;
+		border-radius: 0 0 15px 15px;
+	}
+	.navigation-bar-link a{
+		font-family: Arial Black, Gadget, sans-serif;
+		font-weight: bold;
+		text-decoration: none;
+		float: left;
+		display:inline-block;
+		padding: 1.5vw 7vw 1.5vw 7vw;
+		color: white;}
+	.navigation-bar-link a:hover{
+		background-color: #777777;}
+	.navigation-bar-link a:visited{
+		color: white;}
+	#login-button a{
+		font-family: Arial Black, Gadget, sans-serif;
+		font-weight: bold;
+		text-decoration: none;
+		padding: 1.5vw 7vw 1.5vw 7vw;
+		float:right;
+		display:inline-block;
+		color:white}
+	#login-button a:hover{
+		background-color: #777777;}
+	#login-button a:visited{
+		color: white;}
+	</style>
+</head>
+<body>
+	<ul id="navigation-bar">
+		<li class="navigation-bar-link"><a href="/"> Home </a> </li>
+		<li id="login-button"> <a href={{login_url}}> {{login_text}} </a></li>
+	</ul>
+</body>
+</html>

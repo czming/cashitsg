@@ -1,0 +1,171 @@
+<!-- 
+	login_text
+	login_url
+	mymoney
+	curr_user
+	user_code_url	
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<title>CashIt - Top Up</title>
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    
+<!-- Side Nav -->
+<div id="mySidenav" class="sidenav">
+    <p class="closebtn-portrait" onclick="closeNav()">×</p>
+    <img src="{{user_image}}" />
+	<hr class="sidenav-separator" color="#3E3E3E" >
+	<a href="/">Home</a>
+	<hr class="sidenav-separator" color="#3E3E3E" >
+	<a href="/transfer">Transfer</a>
+	<hr class="sidenav-separator" color="#3E3E3E" >
+	<a href="/settings">Settings</a>
+	<hr class="sidenav-separator"  color="#3E3E3E" >
+	<p class="closebtn-landscape" onclick="closeNav()">×</p>
+	<div id = "loginNavButton">
+		<hr width=80% align="middle" size = "1" color="#3E3E3E" >
+		<a href="/about">About</a>
+		<hr width=80% align="middle" size = "1" color="#3E3E3E" >
+		<a style href="{{login_url}}">Log Out</a>
+		<hr width=80% align="middle" size = "1" color="#3E3E3E" >
+	</div>
+</div>
+
+<!--header-->
+<div id="header">
+    <h1>
+		<div id = "sidenavButton" onclick="openNav()">
+			<span id="navButton">☰</span><span id="currPage"> &nbspTop Up</span>
+		</div>
+		CashIt
+	</h1>
+    <h8 id = "email">{{curr_user}}</h8>
+	<h8 id = "currPageMobile">Top Up</h8>
+</div>
+
+<!-- Tab -->
+<ul id="tab", class="tab">
+  <li><a href="#" class="tablinks" onclick="openCity(event, 'balance')">Top Up</a></li>
+  <li><a href="#" class="tablinks" onclick="openCity(event, 'qrcode')">QR Code</a></li>
+  <li><a href="#" class="tablinks" onclick="openCity(event, 'transaction')">Transaction</a></li>
+</ul>
+
+<div id="balance" class="tabcontent">
+	<section id="intro" >
+	{%if card_id in ten_codes or card_id in fifty_codes%}
+		<p> ${{amount}} will be credited to {{curr_user}}</p>
+		<form>
+			<input type="hidden" value={{card_id}} name="id" />
+			<input type="submit" value="Approve" name="approval" />
+		</form>
+	{%else%}
+		<p> This is not a valid code </p>
+	{% endif %}
+    </section> 
+</div>
+
+<div id="qrcode" class="tabcontent">
+	<section id="intro">
+		<h7>My QR Code:</h7>
+		<hr width=100% align="left" size = "3" color="#818080">
+		   
+		<img id="myImg" src="{{user_code_url}}" alt="User QR Code" onclick="document.getElementById('modalImgDiv').style.display='block'" />
+		<!-- Modal Image Div-->
+		<div id="modalImgDiv" onclick="document.getElementById('modalImgDiv').style.display='none'">
+			<img id="modalImg" src="{{user_code_url}}" />
+			<h4 style = "color:white";>My QR code</h4>
+		</div>
+		   
+		<h4>Your ID! Get payer to scan this to transfer money to your account!</h4>
+    </section>
+</div>
+
+<div id="transaction" class="tabcontent">
+	<section id="intro" >
+		<h7>Transaction History:</h7>
+		<hr width=100% align="left" size = "3" color="#818080">
+		<table class="transactionInfo">
+			<tr style="text-weight:bold;background-color:#A2A2A2">
+				<th class="transaction-time" align="center"> Time </th>
+				<th class="transaction-description" align="center"> Transaction Description </th>
+			</tr>
+			{% for i in curr_transaction_history%}
+				<tr>
+					<td class="trasaction-time" align="center">{{i[0]}}</td>
+					<td class="trasaction-description" align="center">{{i[1]}}</td>
+				</tr> 
+
+			{% endfor %}
+		</table>
+		
+    </section> 
+</div>
+
+<h8 id="emailMobile">{{curr_user}}</h8>
+</body>
+
+<script>
+    /*Script: Tabs*/
+    function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+    function StartCity(cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        tablinks[0].className += " active";
+    }
+	document.onreadystatechange = StartCity('balance')
+	window.addEventListener("resize", navChange);
+    /*Script: Side Nav*/
+    function openNav() {
+		if (window.innerHeight>500){
+        document.getElementById("mySidenav").style.width = "250px";
+        }
+		else{
+		document.getElementById("mySidenav").style.width = "500px";
+		}
+        /*document.body.style.backgroundColor = "rgba(0,0,0,0.4)";*/
+    }
+	function navChange() {
+		if (document.getElementById("mySidenav").style.width.length>3){
+			if (window.innerHeight>500){
+			document.getElementById("mySidenav").style.width = "250px";
+			}
+			else{
+			document.getElementById("mySidenav").style.width = "500px";
+			}
+		}
+        /*document.body.style.backgroundColor = "rgba(0,0,0,0.4)";*/
+    }
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+
+</script>
+</html>
+
