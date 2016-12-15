@@ -1,0 +1,135 @@
+/**{
+	border: 1px dashed blue;
+}*/
+/*---------------------------------------- General Properties ----------------------------------------*/
+body {
+	background:linear-gradient(to bottom right, #455EC3 ,#44EFFA ) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size  : cover;
+    background-size: cover;
+	border: none;
+	color: #333;
+	margin: 0 auto;
+	font: 14px/24px Helvetica, Arial, sans-serif;
+	width: 100%;
+    font-family: "Lato", sans-serif;
+    transition: .5s;
+}
+
+h1 { /*title*/
+	font: normal bold 50px Arial, Helvetica, sans-serif;
+	vertical-align: middle;
+	display: relative;
+    text-align: center;
+}
+
+h2 { 
+	font: normal bold 84px Arial, Helvetica, sans-serif;
+	
+    text-align: center;
+    color: white;
+    padding-bottom:30px;
+    margin-top:auto;
+    margin-bottom:auto;
+}
+
+h3 {
+	font-size: 18px;
+	line-height: 22px;
+    text-align:center;
+	margin-top: -50px;
+    color: antiquewhite;
+}
+
+h3 a {
+    text-decoration: none;
+    color: #333;
+}
+
+h3 a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/**---------------------------------------- login ----------------------------------------**/
+#intro {
+    opacity: 0;
+	margin-top: 15%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom:15%;
+}
+#button {
+	background-color: aliceblue;
+    opacity: 0.6;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
+    display:block;
+    font-size: 50px;
+	padding: 40px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+    margin-top: -10px;
+	text-decoration:none;
+	color:black;
+}
+#button:hover{
+	background-color:#C0C4FA;
+	color:black;
+	text-decoration: none;
+}
+#button:visited{
+	background-color:aliceblue;
+	color:black;
+	text-decoration: none;
+}
+#button:active{
+	background-color:#606BFB;
+	color:black;
+	text-decoration:none;
+}
+
+
+
+@media screen and (max-width: 600px){
+#intro {
+    opacity: 0;
+	margin-top: 50%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom:50%;
+}
+#button {
+	background-color: aliceblue;
+    opacity: 0.6;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
+    display:block;  
+    font-size: 50px;
+	padding: 20px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+    cursor: pointer;
+    font-size: 36px
+}
+    
+h1 {
+    font-size: 28px;
+    
+}
+    
+h2 { 
+font-size: 36px;
+padding-bottom:20px;
+}
+    
+h3{
+    font-size: 11px;
+    font: normal;
+    line-height: 15px;
+	padding: 11px 0;
+    }
+}

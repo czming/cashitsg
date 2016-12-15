@@ -1,0 +1,494 @@
+/**{
+	border: 1px dashed blue;
+}*/
+/*---------------------------------------- General Properties ----------------------------------------*/
+body {
+	background: #f0f0f0;
+	border: none;
+	color: #333;
+	margin: 0 auto;
+	font: 14px/24px Helvetica, Arial, sans-serif;
+	width: 100%;
+    font-family: "Lato", sans-serif;
+    transition: background-color .5s;
+}
+
+#header {
+    transition: margin-left .5s;
+    background: linear-gradient(to bottom right, #455EC3 ,#44EFFA );
+    color:aliceblue;
+	text-align: center;
+	padding: 8px;
+}
+
+h1 { /*title*/
+	font: normal bold 50px Arial, Helvetica, sans-serif;
+	vertical-align: middle;
+	display: relative;
+}
+
+h2 { 
+	font-size: 28px;
+	line-height: 44px;
+	padding: 22px 0;
+    text-align:left;
+}
+
+h3 {
+	font-size: 18px;
+	line-height: 22px;
+	padding: 11px 0;
+    text-align:left;
+	/*
+	font-weight: normal;
+	line-height: 15px;
+	padding: 0 0;
+	width: 900px;
+	*/
+}
+
+h4 { /*tip*/
+	font-weight: bold;
+	line-height: 20px;
+    font-size: 16px;
+    text-align: center;
+	padding: 0 0;
+}
+
+h5 { /*money*/
+	font-size: 36px;
+	text-align: center;
+	color: #969696;
+}
+
+h6 {
+	font-size: 36px;
+	text-align: center;
+	color: #4D4D4D;
+}
+
+h7 { /*content title*/
+    font-weight: bold;
+	line-height: 20px;
+    font-size: 24px;
+    text-align: center;
+	padding: 0 0;
+	width: 900px;
+}
+
+h8 { /*users email*/
+	display: block;
+	font-weight:bolder;
+    font-size: 18px;
+	text-align: right;
+	color: #FDFDFD;
+	margin-top: -35px;
+}
+
+/**---------------------------------------- Content Bars ----------------------------------------**/
+#intro {
+    transition: margin-left .5s;
+	background-color: #B8D3DB;
+	margin-top: 20px;
+    margin-left:20px;
+    margin-right:20px;
+    margin-bottom: 20px;
+	padding: 20px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+}
+
+#intro a {
+	color: #fff;
+	background-color: #333;
+	font: normal bold 14px/44px Arial, Helvetica, sans-serif;
+	padding: 10px;
+	margin-right: 40px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	text-align: right;
+    text-decoration:none;
+    box-shadow: 3px 3px 3px #474747;
+}
+
+#intro a:hover {
+	color: #FF9900;
+	background-color: #222;
+	text-decoration: none;
+    box-shadow: 5px 5px 5px #474747;
+}
+
+
+#currPage {
+	display: inline-block;
+}
+
+/**---------------------------------------- Side Nav ----------------------------------------**/
+
+.sidenav { /*sidenav bar*/
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.7s;
+    padding-top: 60px;
+	box-shadow: 5px 0px 5px #111111;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+	width:250px;
+	height:35px;
+	float:left;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav img {
+	display:block;
+    border-radius: 100%;
+    max-height: 100px;
+    max-width: 100px;
+    margin-left: 75px;
+	margin-bottom: 20px;
+}
+
+.sidenav-separator{
+	width: 200px;
+	display:block;
+	float:left;
+	margin-left:32px;
+}
+
+.sidenav p{
+	-webkit-margin-before:0.5em;
+	-mox-margin-before: 0.5em;
+}
+
+.closebtn-portrait {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px !important;
+    margin-left: 50px;
+	cursor: pointer;
+}
+
+.closebtn-landscape{
+	display:none;
+	position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px !important;
+    margin-left: 50px;
+	cursor:pointer;
+}
+
+#sidenavButton { /*sidenav button*/
+	font-size: 30px;
+	cursor: pointer;
+	position: absolute;
+	margin-top: 8px;
+	margin-left: 10px;
+	transition: all 0.5s;
+}
+
+#navButton:after {
+	content: "<";
+	position: absolute;
+	opacity: 0;
+	transition: 0.5s;
+}
+
+
+#loginNavButton{
+	display: block;
+	position: absolute;	
+	width: 250px;			/*same as the width of the nav bar*/
+	bottom:70px;			/*to allow space for the text, so it can and should be fixed */
+	/*
+	display: block;
+	position: fixed;
+	right:0;
+	left:0;
+	width: 100%;
+	bottom: 0px;
+	background-color: #777;
+	padding: 4vw;
+	text-align: center;
+	font: normal bold 20px Arial, Helvetica, sans-serif;*/
+}
+
+@media screen and (max-height: 500px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+  #about-login{
+	  margin-top: 45px;
+  }
+}
+
+
+/**---------------------------------------- Tabs ----------------------------------------**/
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #EBEDED;
+    transition: margin-left .5s;
+    box-shadow: 0px 5px 2px #888888;
+}
+
+/* Float the list items side by side */
+ul.tab li {float: left;}
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+    font-weight: bolder;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {
+    background-color: #ccc;
+}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+}
+
+/**---------------------------------------- Modal Image----------------------------------------**/
+#myImg {
+	width:20vw;
+	height:20vw;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s; /* I think this may be pointless since the transition occurs when the page is loaded (user not on this tab so can't see)*/
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+#modalImgDiv{
+	cursor:pointer;
+	top:0;
+	left:0;
+	display:none;
+	position:fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+}
+
+#closeImg{
+	display:inline-block;
+	float:right;
+	cursor: pointer;
+	font-size: 3vw;
+	color: #AAAAAA;
+	margin-right: 5vw;
+}
+#modalImgDiv #modalImg { 
+	opacity:1;
+	display:block;
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom{
+	From{
+		transform:scale(0.0);
+	}
+	To{
+		transform:scale(1.0);
+	}
+}
+@-webkit-keyframes zoom{
+	From{
+		transform:scale(0.0);
+	}
+	To{
+		transform:scale(1.0);
+	}
+}
+@media screen and (orientation:landscape){
+	#modalImg{
+		height: 50%;
+		margin-top:25vh;
+		margin-left:auto;
+		margin-right:auto;
+	}
+}
+@media screen and (orientation: portrait){
+	#modalImg{
+		width: 80vw;
+		margin: auto;
+		position: absolute;
+		top: 0; 
+		bottom: 0; 
+		left: 0; 
+		right: 0;
+	}
+	#closeImg{
+		font-size:6vw;
+		margin-right:6vw;
+	}
+}
+#emailMobile{
+	display:none;
+}
+
+#currPageMobile{
+	display: none;
+}
+
+.transaction-time{
+	width:20vw;
+}
+.transaction-description{
+	width: 55vw;
+}
+
+
+table{
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+tr{
+    border: 1px solid black;
+}
+
+
+
+/*form settings*/
+#settings-forms form{
+	display:none;
+}
+#change-image-button{
+	width: 30vw;
+}
+
+@media screen and (max-width: 600px){
+	body{
+		margin-bottom: 15vw;
+	}
+	#email{
+		display:none;
+	}
+	
+	#emailMobile{
+		display: block;
+		position: fixed;
+		right:0;
+		left:0;
+		width: 100%;
+		bottom: 0px;
+		background-color: #EBEDED;
+        padding: 20px 0;
+		text-align: center;
+		font: normal bold 20px Arial, Helvetica, sans-serif;
+        color: #333;
+        border: 2px solid #ccc;
+	}
+	
+	#currPage{
+		display: none;
+	}
+	
+	#currPageMobile {
+		display: block;
+		text-align: center;
+	}
+	
+	.transaction-time{
+		width:30vw;
+	}
+	.transaction-description{
+		width: 60vw;
+	}
+
+    #myImg {
+        width: 100%;
+        height: 100%;
+
+    }
+	#change-image-button{
+		width: 60vw;
+	}
+}
+@media screen and (max-width:350px){
+	.tablinks{
+		font-size: 14px;
+	}
+}
+
+@media screen and (max-height: 500px){
+	.sidenav img{
+		margin-top:20px;
+	}
+	.closebtn-portrait{
+		display:none;
+	}
+	.closebtn-landscape{
+		display:initial;
+	}
+	#loginNavButton{
+		left: 250px;
+		top:70px;
+	}
+}
+
+@media screen and (max-width: 500px and orientation:landscape){	/*iphones seem to return the original height even when the orientation has changed, this is to address that */
+	.sidenav img{
+		margin-top:20px;
+	}
+	.closebtn-portrait{
+		display:none;
+	}
+	.closebtn-landscape{
+		display:block;
+	}
+	#loginNavButton{
+		left: 250px;
+		top:70px;
+	}
+}
+@media screen and(max-height:335px){
+	.sidenav{
+		overflow-y: scroll;
+	}
+}
